@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Tahoma, sans-serif;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  font-weight: 400;
+  font-size: 1rem;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #f6f6f6;
+}
+
+button {
+  outline: none;
+  width: auto;
+  border: none;
+  background: white;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+button:active {
+  opacity: 1;
+}
+
+.list-container {
+  margin-top: 5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  width: 90%;
+  border: 1px solid rgb(0 0 0 / 10%);
+  max-width: 500px;
+  background: #fff;
+}
+
+.list-header,
+.list-input,
+.clear-list-button {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+}
+
+.list-header .title {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.list-input .input {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  font-style: italic;
+  color: #333;
+  flex-grow: 1;
+}
+
+.list-input .input::placeholder {
+  color: #b3b3b3;
+}
+
+.clear-list-button {
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #333;
+  background: #e6e6e6;
+  padding: 1.75rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.list .list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+}
+
+.list .list-item .action-button {
+  margin-left: 1.5rem;
+}
+
+.list .list-item .action-button .button-icon {
+  pointer-events: none;
+}
+
+.list .list-item .left,
+.list .list-item .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list .list-item .description {
+  margin-left: 1.5rem;
+}
+
+.list .list-item .left input[type="checkbox"]:checked + .description {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  .list-container {
+    width: 50%;
+  }
+}
